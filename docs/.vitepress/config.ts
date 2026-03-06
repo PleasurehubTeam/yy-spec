@@ -25,6 +25,13 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: 'Skills 推荐',
+        items: [
+          { text: '概述', link: '/skills/' },
+          { text: 'find-skills', link: '/skills/find-skills' },
+        ],
+      },
+      {
         text: 'yy-spec',
         items: [
           { text: '快速上手', link: '/getting-started/' },
