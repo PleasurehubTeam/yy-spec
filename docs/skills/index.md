@@ -4,9 +4,11 @@
 
 ## 什么是 Skill？
 
-Skill 是一种标准化的知识包格式，安装后 AI 编码助手（如 Claude Code）会在相关场景自动调用，提供专业指导。
+Skill 是一种标准化的知识包格式，安装后 AI 编码助手（如 Claude Code）可以获得特定领域的专业知识和工作流。
 
-例如：安装了 `find-skills` 后，当你问 "有没有帮助写测试的工具？"，AI 会自动搜索并推荐合适的 skill。
+**重要**：大部分 skill 不会自动生效。你需要在对话中**明确告诉 AI 使用对应的 skill**，AI 才会去调用。只有少数插件类 skill（如 Superpowers）安装后会自动介入。
+
+每个 skill 的触发方式不同，具体看各自的文档。
 
 ## 如何安装 Skill
 
@@ -23,10 +25,10 @@ npx skills add <owner/repo@skill-name> -g -y
 
 ## 推荐列表
 
-| Skill | 用途 |
-|-------|------|
-| [find-skills](./find-skills) | 搜索和发现新 skill |
-| [Superpowers](./superpowers) | 完整的 AI 编码工作流框架（TDD、调试、审查、计划执行） |
-| [agent-browser](./agent-browser) | 命令行浏览器自动化（比 MCP 更省 token） |
+| Skill | 用途 | 触发方式 |
+|-------|------|---------|
+| [find-skills](./find-skills) | 搜索和发现新 skill | 需要你说"找一个 XX 的 skill" |
+| [Superpowers](./superpowers) | 完整的 AI 编码工作流框架 | 自动生效 |
+| [agent-browser](./agent-browser) | 命令行浏览器自动化 | 需要你说"用 agent-browser 看看页面" |
 
 更多 skill 介绍持续更新中。

@@ -30,7 +30,9 @@ Superpowers 是目前最受欢迎的 Claude Code 插件之一（GitHub 72k+ star
 /plugin install superpowers@superpowers-marketplace
 ```
 
-不需要额外配置，AI 会自动在合适的场景调用。
+Superpowers 是**插件**（plugin），不是普通 skill。安装后**自动生效** — AI 在每个任务开始前都会检查是否有适用的 skill，不需要你手动触发。
+
+这是 Superpowers 和其他 skill 最大的区别：你装了就行，不用记任何命令。
 
 ## 装了之后会怎样？
 

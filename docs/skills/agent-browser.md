@@ -6,7 +6,7 @@
 
 agent-browser 是 Vercel 团队开源的浏览器自动化工具。安装后，AI 可以像真人一样操作浏览器：打开网页、点击按钮、填表单、截图、看控制台报错。
 
-你不需要学任何命令 — 只需要用自然语言告诉 AI 你想做什么，它会自己调用 agent-browser 来执行。
+你不需要学任何命令。但你需要**明确告诉 AI 使用 agent-browser**，它才会去调用。
 
 ## 安装
 
@@ -21,9 +21,19 @@ agent-browser install
 npx skills add vercel-labs/agent-browser
 ```
 
+## 怎么触发？
+
+你需要在对话中提到 agent-browser 或明确要求 AI 操作浏览器：
+
+- "用 agent-browser 打开 localhost:3000 看看"
+- "用浏览器帮我测试一下登录流程"
+- "agent-browser 截个图看看首页效果"
+
+AI 不会自动打开浏览器 — 你不说，它不会主动用。
+
 ## 你能用它做什么
 
-### "帮我看看首页长什么样"
+### "用 agent-browser 看看首页长什么样"
 
 AI 会打开浏览器，导航到页面，截图给你看，然后描述页面内容和可能的问题。
 

@@ -36,7 +36,7 @@ claude mcp add <名称> <命令> [参数...]
 claude mcp add playwright npx @playwright/mcp@latest
 ```
 
-添加后 AI 就能使用该 MCP Server 提供的工具了。
+添加后 AI 就拥有了该 MCP Server 提供的工具。但 AI 不会自动使用 — 你需要在对话中**明确要求 AI 执行相关操作**，它才会调用对应的 MCP 工具。
 
 ## 推荐列表
 
