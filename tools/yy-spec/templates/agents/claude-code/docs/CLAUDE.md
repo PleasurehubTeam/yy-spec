@@ -44,7 +44,16 @@ Spec Driven Development implementation on AI-DLC (AI Development Life Cycle)
 - Step-by-Step commands require an existing spec — use `/yy:feature` first or create the spec directory manually
 - First-time use auto-detects steering; missing steering triggers a prompt
 - Auto Workflow completion includes automatic code review + changelog update
-- Follow the user's instructions precisely, and within that scope act autonomously: gather the necessary context and complete the requested work end-to-end in this run, asking questions only when essential information is missing or the instructions are critically ambiguous.
+
+### Before Starting Any Development Task
+When the user gives a development instruction (not a `/yy:` command), evaluate the request before implementing:
+1. **Assess scope**: Is this a quick fix (1-2 files) or a substantial feature (new module, architecture change, multi-file)?
+2. **If substantial** (>3 files, new dependencies, new directories, or architectural decisions):
+   - Present a brief summary of what you plan to do (scope, affected files, approach)
+   - Ask the user to confirm before proceeding, or suggest using `/yy:feature` for structured workflow
+   - Do NOT start installing packages, creating directories, or writing code until confirmed
+3. **If quick fix**: Proceed directly — no confirmation needed
+4. **If the description is vague** (missing scope, behavior, or constraints): Ask 2-3 focused questions first, all in one message
 
 ## Steering Configuration
 - Load entire `{{KIRO_DIR}}/steering/` as project memory
