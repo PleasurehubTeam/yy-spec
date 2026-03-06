@@ -40,6 +40,22 @@ Generate complete requirements for the feature based on the project description 
 
 ## Execution Steps
 
+### Step 0: Ensure Spec Exists
+
+Check if `{{KIRO_DIR}}/specs/{feature}/` directory exists.
+
+**If it does NOT exist** (first-time step-by-step workflow):
+1. Verify `{{KIRO_DIR}}/steering/` exists with core files — if missing, **stop** and report error
+2. Create directory: `{{KIRO_DIR}}/specs/{feature}/`
+3. Read template `{{KIRO_DIR}}/settings/templates/specs/init-feature.json`
+4. Write `spec.json` with `feature_name: {feature}`, timestamps, language from steering context
+5. Write initial `requirements.md` with a title derived from the feature name and the project description from `{{KIRO_DIR}}/steering/product.md`
+6. Continue to Step 1
+
+**If it exists**: Continue to Step 1.
+
+### Step 1: Load Context
+
 1. **Load Context**:
    - Read `{{KIRO_DIR}}/specs/{feature}/spec.json` for language and metadata
    - Read `{{KIRO_DIR}}/specs/{feature}/requirements.md` for project description

@@ -41,7 +41,7 @@ Spec Driven Development implementation on AI-DLC (AI Development Life Cycle)
 
 ## Development Rules
 - Auto Workflow commands (feature/fix/investigate) auto-create spec directories
-- Step-by-Step commands require an existing spec — use `/yy:feature` first or create the spec directory manually
+- Step-by-Step commands auto-create spec directories if they don't exist (steering required as prerequisite)
 - First-time use auto-detects steering; missing steering triggers a prompt
 - Auto Workflow completion includes automatic code review + changelog update
 
