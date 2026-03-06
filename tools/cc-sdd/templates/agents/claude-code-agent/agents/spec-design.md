@@ -148,12 +148,12 @@ Provide brief summary in the language specified in spec.json:
 **Requirements Not Approved**:
 - **Stop Execution**: Cannot proceed without approved requirements
 - **User Message**: "Requirements not yet approved. Approval required before design generation."
-- **Suggested Action**: "Run `/kiro:spec-design {feature} -y` to auto-approve requirements and proceed"
+- **Suggested Action**: "Run `/yy:feature {feature}` to auto-generate requirements and design"
 
 **Missing Requirements**:
 - **Stop Execution**: Requirements document must exist
 - **User Message**: "No requirements.md found at `{{KIRO_DIR}}/specs/{feature}/requirements.md`"
-- **Suggested Action**: "Run `/kiro:spec-requirements {feature}` to generate requirements first"
+- **Suggested Action**: "Run `/yy:feature {feature}` to generate requirements and design"
 
 **Template Missing**:
 - **User Message**: "Template file missing at `{{KIRO_DIR}}/settings/templates/specs/design.md`"

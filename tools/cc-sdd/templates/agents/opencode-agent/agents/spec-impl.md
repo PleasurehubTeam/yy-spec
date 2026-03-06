@@ -108,7 +108,7 @@ Provide brief summary in the language specified in spec.json:
 
 **Tasks Not Approved or Missing Spec Files**:
 - **Stop Execution**: All spec files must exist and tasks must be approved
-- **Suggested Action**: "Complete previous phases: `/kiro-spec-requirements`, `/kiro-spec-design`, `/kiro-spec-tasks`"
+- **Suggested Action**: "Complete previous phases: `/yy-spec-requirements`, `/yy-spec-design`, `/yy-spec-tasks`"
 
 **Test Failures**:
 - **Stop Implementation**: Fix failing tests before continuing
