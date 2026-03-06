@@ -88,3 +88,6 @@ docs/kiro/
 .gemini/
 # GEMINI.md
 # AGENTS.md
+
+# Playwright MCP cache
+.playwright-mcp/

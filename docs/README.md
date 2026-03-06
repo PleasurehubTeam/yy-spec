@@ -1,19 +1,7 @@
-# yy-spec Documentation Index
 
-Quick pointers to the most relevant guides, workflows, and historical notes for yy-spec.
+根据上级目录以及 tools/yy-spec，进行分析，这是一个文档项目，
+工具操作说明可以以应用场景作为分类。当读者是傻子一样写。粗浅一点。由浅入深。
+使用 vitepress。
 
-## Current Guides
-
-- [Project README (English)](../README.md)
-- [Project README (简体中文)](../tools/yy-spec/README_zh.md)
-- [Release Notes](RELEASE_NOTES)
-
-## Deep Dives (WIP)
-
-- [Spec-Driven Development Workflow](guides/spec-driven.md)
-- [Claude Code Subagents Workflow](guides/claude-subagents.md)
-
-## Legacy Reference (Archived)
-
-- [Multi-Platform Spec-Driven Development (English)](README/README_en.md)
-- [多平台规格驱动开发 (简体中文)](README/README_zh.md)
+而且要注意的是这不只是这个的使用文档，后续会安排更多 ai 开发的相关知识在里面。
+所以是一个通用的文档项目。不单是工具的使用说明文档。
