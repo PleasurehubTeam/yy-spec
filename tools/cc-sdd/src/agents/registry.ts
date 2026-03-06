@@ -39,7 +39,7 @@ export const agentDefinitions = {
   'claude-code': {
     label: 'Claude Code',
     description:
-      'Installs yy workflow commands in `.claude/commands/yy/`, shared settings in `{{KIRO_DIR}}/settings/` (default `.kiro/settings/`), and a CLAUDE.md quickstart.',
+      'Installs yy workflow commands in `.claude/commands/yy/`, shared settings in `{{KIRO_DIR}}/settings/` (default `.yy-dev/settings/`), and a CLAUDE.md quickstart.',
     aliasFlags: ['--claude-code', '--claude'],
     recommendedModels: ['Claude Opus 4.5 or newer'],
     layout: {
@@ -60,7 +60,7 @@ export const agentDefinitions = {
   'claude-code-agent': {
     label: 'Claude Code Agents',
     description:
-      'Installs yy workflow commands in `.claude/commands/yy/`, a Claude agent library in `.claude/agents/kiro/`, shared settings in `{{KIRO_DIR}}/settings/`, and a CLAUDE.md quickstart.',
+      'Installs yy workflow commands in `.claude/commands/yy/`, a Claude agent library in `.claude/agents/yy/`, shared settings in `{{KIRO_DIR}}/settings/`, and a CLAUDE.md quickstart.',
     aliasFlags: ['--claude-code-agent', '--claude-agent'],
     recommendedModels: ['Claude Opus 4.5 or newer'],
     layout: {
@@ -209,7 +209,7 @@ export const agentDefinitions = {
   'opencode-agent': {
     label: 'OpenCode Agents',
     description:
-      'Installs yy commands in `.opencode/commands/`, a yy agent library in `.opencode/agents/kiro/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
+      'Installs yy commands in `.opencode/commands/`, a yy agent library in `.opencode/agents/yy/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
     aliasFlags: ['--opencode-agent'],
     recommendedModels: ['gpt-5.2-codex', 'gpt-5.2'],
     layout: {

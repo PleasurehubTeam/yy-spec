@@ -34,10 +34,10 @@ Each phase pauses for human review unless you explicitly bypass it (for example 
 
 | Command | Purpose | Primary Artefact(s) |
 |---------|---------|---------------------|
-| `/yy:steering` | Build / refresh project memory | `.kiro/steering/*.md`
-| `/yy:feature <desc>` | New feature → auto-size → implement or plan | `.kiro/specs/<feature>/`
-| `/yy:fix <desc>` | Known bug → TDD fix → code review | `.kiro/specs/fix-<name>/`
-| `/yy:investigate <desc>` | Uncertain issue → diagnosis | `.kiro/specs/investigate-<name>/`
+| `/yy:steering` | Build / refresh project memory | `.yy-dev/steering/*.md`
+| `/yy:feature <desc>` | New feature → auto-size → implement or plan | `.yy-dev/specs/<feature>/`
+| `/yy:fix <desc>` | Known bug → TDD fix → code review | `.yy-dev/specs/fix-<name>/`
+| `/yy:investigate <desc>` | Uncertain issue → diagnosis | `.yy-dev/specs/investigate-<name>/`
 | `/yy:spec-requirements <feature>` | Capture requirements & gaps | `requirements.md`
 | `/yy:spec-design <feature>` | Produce investigation log + implementation design | `research.md` (when needed), `design.md`
 | `/yy:spec-tasks <feature>` | Break design into tasks with parallel waves | `tasks.md` (with P-labels)

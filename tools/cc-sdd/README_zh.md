@@ -112,7 +112,7 @@ npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
 1. **单一真相来源规格** — 需求、设计、任务和相关参考保持同步，让审查者更快批准。
 2. **全新或遗留项目均适用** — 全新功能可在几分钟内启动，而验证门禁和项目记忆使遗留系统升级更安全。
 3. **混合任意 agent** — 相同的模板和规则同时驱动 Claude、Cursor、Codex、Gemini、Copilot、Qwen 和 Windsurf。
-4. **一次自定义** — 编辑 `.kiro/settings/templates/` 或 `.kiro/settings/rules/`，所有 agent/斜杠命令即反映你的工作流。
+4. **一次自定义** — 编辑 `.yy-dev/settings/templates/` 或 `.yy-dev/settings/rules/`，所有 agent/斜杠命令即反映你的工作流。
 
 ## ✨ 核心特性
 
@@ -226,9 +226,9 @@ project/
 ├── .codex/prompts/           # 11 个 prompt 命令（Codex CLI）
 ├── .github/prompts/          # 11 个 prompt 命令（GitHub Copilot）
 ├── .windsurf/workflows/      # 11 个工作流文件（Windsurf IDE）
-├── .kiro/settings/           # 共享规则与模板（变量通过 {{KIRO_DIR}} 解析）
-├── .kiro/specs/              # 功能规格
-├── .kiro/steering/           # AI 指导规则
+├── .yy-dev/settings/           # 共享规则与模板（变量通过 {{KIRO_DIR}} 解析）
+├── .yy-dev/specs/              # 功能规格
+├── .yy-dev/steering/           # AI 指导规则
 └── CLAUDE.md（Claude Code）   # 项目配置
 ```
 

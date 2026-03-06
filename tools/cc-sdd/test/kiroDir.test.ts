@@ -19,7 +19,7 @@ describe('resolveKiroDir', () => {
   });
 
   it('deduplicates consecutive slashes', () => {
-    expect(resolveKiroDir({ flag: '.kiro//specs//' })).toBe('.kiro/specs');
+    expect(resolveKiroDir({ flag: '.yy-dev//specs//' })).toBe('.yy-dev/specs');
   });
 
   it('rejects absolute path', () => {

@@ -39,7 +39,7 @@ const defaults = {
   agent: 'claude-code' as AgentType,
   os: 'auto' as const,
   lang: 'en' as SupportedLanguage,
-  kiroDir: '.kiro',
+  kiroDir: '.yy-dev',
   overwrite: 'prompt' as OverwritePolicy,
   backupDir: '.cc-sdd.backup',
 };

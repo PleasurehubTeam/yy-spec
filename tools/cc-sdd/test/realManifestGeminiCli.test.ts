@@ -36,7 +36,7 @@ describe('real gemini-cli manifest (mac)', () => {
     expect(out).toMatch(/Plan \(dry-run\)/);
     expect(out).toContain('[templateDir] commands: templates/agents/gemini-cli/commands -> .gemini/commands/yy');
     expect(out).toContain('[templateFile] doc_main: templates/agents/gemini-cli/docs/GEMINI.md -> ./GEMINI.md');
-    expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .kiro/settings');
+    expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .yy-dev/settings');
   });
 
   it('apply writes GEMINI.md and command files to cwd', async () => {
@@ -53,7 +53,7 @@ describe('real gemini-cli manifest (mac)', () => {
     const cmd = join(cwd, '.gemini/commands/yy/spec-init.toml');
     expect(await exists(cmd)).toBe(true);
 
-    const settingsRule = join(cwd, '.kiro/settings/rules/design-principles.md');
+    const settingsRule = join(cwd, '.yy-dev/settings/rules/design-principles.md');
     expect(await exists(settingsRule)).toBe(true);
 
     expect(ctx.logs.join('\n')).toMatch(/Setup completed: written=\d+, skipped=\d+/);
@@ -71,7 +71,7 @@ describe('real gemini-cli manifest (linux)', () => {
     expect(out).toMatch(/Plan \(dry-run\)/);
     expect(out).toContain('[templateDir] commands: templates/agents/gemini-cli/commands -> .gemini/commands/yy');
     expect(out).toContain('[templateFile] doc_main: templates/agents/gemini-cli/docs/GEMINI.md -> ./GEMINI.md');
-    expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .kiro/settings');
+    expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .yy-dev/settings');
   });
 
   it('apply writes GEMINI.md and command files to cwd on linux', async () => {
@@ -88,7 +88,7 @@ describe('real gemini-cli manifest (linux)', () => {
     const cmd = join(cwd, '.gemini/commands/yy/spec-init.toml');
     expect(await exists(cmd)).toBe(true);
 
-    const settingsTemplate = join(cwd, '.kiro/settings/templates/specs/init.json');
+    const settingsTemplate = join(cwd, '.yy-dev/settings/templates/specs/init.json');
     expect(await exists(settingsTemplate)).toBe(true);
 
     expect(ctx.logs.join('\n')).toMatch(/Setup completed: written=\d+, skipped=\d+/);

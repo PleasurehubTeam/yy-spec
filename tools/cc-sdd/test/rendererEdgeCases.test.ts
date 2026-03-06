@@ -89,7 +89,7 @@ describe('template renderer edge cases', () => {
       expect(result.config.agent).toBe('claude-code');
       expect(result.config.nested.dir).toBe('.claude');
       expect(result.config.nested.file).toBe('CLAUDE.md');
-      expect(result.array).toEqual(['en', '.kiro', ctx.DEV_GUIDELINES]);
+      expect(result.array).toEqual(['en', '.yy-dev', ctx.DEV_GUIDELINES]);
     });
 
     it('handles JSON with numbers and booleans', () => {

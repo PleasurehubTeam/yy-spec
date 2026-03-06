@@ -126,7 +126,7 @@ Documentation-only release improving README clarity and visual consistency.
 - **Global parity**: 7 AI agents × 13 languages share the same templates, prompts, and installation flow.
 
 ### Upgrade Essentials
-1. Follow the [Migration Guide](../guides/migration-guide.md) for template layout changes (`.kiro/settings/templates/*`) and new steering behavior (directory-wide load).
+1. Follow the [Migration Guide](../guides/migration-guide.md) for template layout changes (`.yy-dev/settings/templates/*`) and new steering behavior (directory-wide load).
 2. Update automation/scripts to call `npx cc-sdd@latest` (the `@next` tag is reserved for future previews).
 3. Regenerate steering + spec templates once to pick up Research.md, the new design rules, and tasks parallel markers.
 
@@ -392,7 +392,7 @@ Fundamental review of entire spec-driven development workflow
 ### Fixed Issues
 
 **Improved Directory Handling**
-- Now works properly even when `.kiro/steering/` directory doesn't exist
+- Now works properly even when `.yy-dev/steering/` directory doesn't exist
 - More user-friendly error messages
 
 **Improved Internal File Management**

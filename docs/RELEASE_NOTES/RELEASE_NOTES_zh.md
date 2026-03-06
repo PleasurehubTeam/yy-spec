@@ -126,7 +126,7 @@ cc-sdd 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../../
 - **全球一致性**：7 个 AI agent × 13 种语言共享相同的模板、提示词和安装流程。
 
 ### 升级要点
-1. 参照 [迁移指南](../guides/migration-guide.md) 了解模板布局变更（`.kiro/settings/templates/*`）及新的 steering 行为（目录级加载）。
+1. 参照 [迁移指南](../guides/migration-guide.md) 了解模板布局变更（`.yy-dev/settings/templates/*`）及新的 steering 行为（目录级加载）。
 2. 将自动化脚本更新为调用 `npx cc-sdd@latest`（`@next` 标签保留用于未来预览版）。
 3. 重新生成 steering 和规格模板，以获取 Research.md、新设计规则和任务并行标记。
 
@@ -392,7 +392,7 @@ cc-sdd 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../../
 ### 修复的问题
 
 **目录处理改进**
-- 即使 `.kiro/steering/` 目录不存在也能正常工作
+- 即使 `.yy-dev/steering/` 目录不存在也能正常工作
 - 更友好的错误信息
 
 **内部文件管理改进**

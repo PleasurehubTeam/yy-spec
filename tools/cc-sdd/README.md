@@ -119,7 +119,7 @@ npx cc-sdd@latest --windsurf --lang zh      # Windsurf IDE
 1. **Single source specs** – requirements, design, tasks, and supporting references stay in sync, so reviewers approve faster.
 2. **Greenfield or brownfield** – net-new features boot in minutes, while validate gates and project memory keep legacy upgrades safe.
 3. **Mix any agent** – the same templates and rules power Claude, Cursor, Codex, Gemini, Copilot, Qwen, and Windsurf simultaneously.
-4. **Customize once** – edit `.kiro/settings/templates/` or `.kiro/settings/rules/` and every agent/slash command reflects your workflow.
+4. **Customize once** – edit `.yy-dev/settings/templates/` or `.yy-dev/settings/rules/` and every agent/slash command reflects your workflow.
 
 ## ✨ Key Features
 
@@ -233,9 +233,9 @@ project/
 ├── .codex/prompts/           # 11 prompt commands (Codex CLI)
 ├── .github/prompts/          # 11 prompt commands (GitHub Copilot)
 ├── .windsurf/workflows/      # 11 workflow files (Windsurf IDE)
-├── .kiro/settings/           # Shared rules & templates (variables resolved with {{KIRO_DIR}})
-├── .kiro/specs/              # Feature specifications
-├── .kiro/steering/           # AI guidance rules
+├── .yy-dev/settings/           # Shared rules & templates (variables resolved with {{KIRO_DIR}})
+├── .yy-dev/specs/              # Feature specifications
+├── .yy-dev/steering/           # AI guidance rules
 └── CLAUDE.md (Claude Code)    # Project configuration
 ```
 

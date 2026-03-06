@@ -11,14 +11,14 @@ cc-sdd 1.x (especially 1.1.5) and 2.0.0 share the same AI-DLC philosophy and com
 | Goal | Recommended action |
 | --- | --- |
 | Keep the legacy 1.x workflow untouched | Run `npx cc-sdd@1.1.5` whenever you install/refresh files. Continue editing agent-specific prompt folders (only the original 8 spec/steering commands exist). |
-| Adopt unified templates, research/design split, and consistent behavior across all 8 supported agents | Reinstall with `npx cc-sdd@latest` (=2.0.0) and customize only `.kiro/settings/templates/*` plus `.kiro/settings/rules/` (full 11-command set, including validate-*). |
+| Adopt unified templates, research/design split, and consistent behavior across all 8 supported agents | Reinstall with `npx cc-sdd@latest` (=2.0.0) and customize only `.yy-dev/settings/templates/*` plus `.yy-dev/settings/rules/` (full 11-command set, including validate-*). |
 
 > ⚠️ Mixing 1.x and 2.x layouts in the same `.kiro` tree is not supported. Pick one path per repo/branch.
 
 ### What carries over unchanged
 
-- `.kiro/specs/<feature>/` directories you already authored remain valid inputs; simply regenerate newer templates when you are ready.
-- `.kiro/steering/` (or a single `steering.md`) can be reused as-is—the content is still consumed verbatim as project memory.
+- `.yy-dev/specs/<feature>/` directories you already authored remain valid inputs; simply regenerate newer templates when you are ready.
+- `.yy-dev/steering/` (or a single `steering.md`) can be reused as-is—the content is still consumed verbatim as project memory.
 - The 11 AI-DLC commands (`spec-*`, `validate-*`, `steering*`) and the high-level spec→design→tasks→impl flow stay identical; only the template internals have moved to a just-in-time, agentic style.
 
 ---
@@ -43,9 +43,9 @@ npx cc-sdd@1.1.5 --lang ja       # legacy i18n flags still work
 
 > The AI-DLC workflow (spec-init → design → tasks → impl, with validation gates) and the 11 command entry points are unchanged. What changed is **where you customize and how much structure the resulting docs provide.**
 
-- **Template & rules driven customization** – stop patching commands; edit `.kiro/settings/templates/` and `.kiro/settings/rules/` once and every agent picks it up.
+- **Template & rules driven customization** – stop patching commands; edit `.yy-dev/settings/templates/` and `.yy-dev/settings/rules/` once and every agent picks it up.
 - **Spec fidelity** – Research.md captures discovery logs while Design.md becomes reviewer friendly with Summary tables, Req Coverage, Supporting References, and lighter Components/Interfaces blocks.
-- **Steering = Project Memory** – drop structured knowledge across `.kiro/steering/*.md` files and every command consumes it.
+- **Steering = Project Memory** – drop structured knowledge across `.yy-dev/steering/*.md` files and every command consumes it.
 - **Brownfield guardrails** – `/yy:validate-gap`, `validate-design`, `validate-impl` plus the research/design split make gap analysis and existing-system upgrades much safer.
 - **Unified coverage** – all 8 supported agents (Claude Code, Claude Subagents, Cursor, Codex CLI, Gemini CLI, GitHub Copilot, Qwen Code, OpenCode, Windsurf) run the same 11-command workflow, so mixing agents (e.g., Cursor + Claude) requires zero spec rewrites.
 
@@ -68,11 +68,11 @@ npx cc-sdd@1.1.5 --lang ja       # legacy i18n flags still work
    - The installer now prompts per file group (overwrite / append / keep). You can choose “append” for steering/specs to merge existing documents, or “keep” to skip untouched assets.
 
 3. **Regenerate + merge templates/rules**
-   - New layout: `.kiro/settings/templates/` (centralized) + `.kiro/settings/rules/`.
+   - New layout: `.yy-dev/settings/templates/` (centralized) + `.yy-dev/settings/rules/`.
    - Compare the new templates with any custom logic you previously kept inside agent prompt folders and move the reusable parts into templates/rules.
 
 4. **Move custom rules**
-   - Place Markdown files under `.kiro/settings/rules/`. Every spec/design/tasks command reads them.
+   - Place Markdown files under `.yy-dev/settings/rules/`. Every spec/design/tasks command reads them.
    - Anything you previously hard-coded into prompts becomes a rule entry (“DO/DO NOT …”).
 
 5. **Rebuild steering (optional)**
@@ -89,10 +89,10 @@ npx cc-sdd@1.1.5 --lang ja       # legacy i18n flags still work
 
 | Legacy touchpoint | v2 replacement | Notes |
 | --- | --- | --- |
-| `.claude/commands/spec-design.prompt.md` などエージェント別コマンドファイル | `.kiro/settings/templates/specs/design.md` | Templates now live in `.kiro/settings/templates/` and generate Summary/Supporting References automatically. |
-| `.claude/commands/<cmd>.prompt`, `.cursor/prompts/*` | `.kiro/settings/rules/*.md` | Replace prompt edits with shared rule statements so every agent receives identical guidance. |
-| `.kiro/steering/` (single file or not) | `.kiro/steering/*.md` with clearer principles/guides | Same folder path; v2 simply encourages breaking content into focused project-memory guides. |
-| Research notes interleaved in design.md | `.kiro/specs/<feature>/research.md` + Supporting References section | Design stays reviewer friendly; research keeps raw findings without cluttering the main body. |
+| `.claude/commands/spec-design.prompt.md` などエージェント別コマンドファイル | `.yy-dev/settings/templates/specs/design.md` | Templates now live in `.yy-dev/settings/templates/` and generate Summary/Supporting References automatically. |
+| `.claude/commands/<cmd>.prompt`, `.cursor/prompts/*` | `.yy-dev/settings/rules/*.md` | Replace prompt edits with shared rule statements so every agent receives identical guidance. |
+| `.yy-dev/steering/` (single file or not) | `.yy-dev/steering/*.md` with clearer principles/guides | Same folder path; v2 simply encourages breaking content into focused project-memory guides. |
+| Research notes interleaved in design.md | `.yy-dev/specs/<feature>/research.md` + Supporting References section | Design stays reviewer friendly; research keeps raw findings without cluttering the main body. |
 
 ---
 

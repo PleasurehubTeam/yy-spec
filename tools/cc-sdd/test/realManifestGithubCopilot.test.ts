@@ -52,7 +52,7 @@ describe('real github-copilot manifest', () => {
     expect(out).toMatch(/Plan \(dry-run\)/);
     expect(out).toContain('[templateDir] commands: templates/agents/github-copilot/commands -> .github/prompts');
     expect(out).toContain('[templateFile] doc_main: templates/agents/github-copilot/docs/AGENTS.md -> ./AGENTS.md');
-    expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .kiro/settings');
+    expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .yy-dev/settings');
   });
 
   it('apply writes AGENTS.md, prompts, and shared settings', async () => {
@@ -75,7 +75,7 @@ describe('real github-copilot manifest', () => {
     const prompt = join(cwd, '.github/prompts/yy-spec-init.prompt.md');
     expect(await exists(prompt)).toBe(true);
 
-    const settingsTemplate = join(cwd, '.kiro/settings/templates/specs/tasks.md');
+    const settingsTemplate = join(cwd, '.yy-dev/settings/templates/specs/tasks.md');
     expect(await exists(settingsTemplate)).toBe(true);
 
     expect(ctx.logs.join('\n')).toMatch(/Setup completed: written=\d+, skipped=\d+/);

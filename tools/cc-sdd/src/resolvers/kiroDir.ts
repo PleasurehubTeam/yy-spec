@@ -5,7 +5,7 @@ export type KiroDirOptions = {
   config?: string;
 };
 
-export const defaultKiroDir = '.kiro';
+export const defaultKiroDir = '.yy-dev';
 
 export const resolveKiroDir = (opts: KiroDirOptions = {}): string => {
   const candidate = opts.flag ?? opts.config ?? defaultKiroDir;

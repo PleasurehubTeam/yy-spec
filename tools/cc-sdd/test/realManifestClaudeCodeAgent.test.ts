@@ -39,9 +39,9 @@ describe('real claude-code-agent manifest', () => {
     const out = ctx.logs.join('\n');
     expect(out).toMatch(/Plan \(dry-run\)/);
     expect(out).toContain('[templateDir] commands: templates/agents/claude-code-agent/commands -> .claude/commands/yy');
-    expect(out).toContain('[templateDir] agents_library: templates/agents/claude-code-agent/agents -> .claude/agents/kiro');
+    expect(out).toContain('[templateDir] agents_library: templates/agents/claude-code-agent/agents -> .claude/agents/yy');
     expect(out).toContain('[templateFile] doc_main: templates/agents/claude-code-agent/docs/CLAUDE.md -> ./CLAUDE.md');
-    expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .kiro/settings');
+    expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .yy-dev/settings');
   });
 
   it('apply writes CLAUDE.md, command files, and agent library docs to cwd', async () => {
@@ -65,12 +65,12 @@ describe('real claude-code-agent manifest', () => {
       'validate-design.md', 'validate-gap.md', 'validate-impl.md',
     ]);
 
-    const agentSpecImpl = join(cwd, '.claude/agents/kiro/spec-impl.md');
+    const agentSpecImpl = join(cwd, '.claude/agents/yy/spec-impl.md');
     expect(await exists(agentSpecImpl)).toBe(true);
     const agentSpecImplText = await readFile(agentSpecImpl, 'utf8');
     expect(agentSpecImplText).toMatch(/Subagent/);
 
-    const settingsRule = join(cwd, '.kiro/settings/rules/design-principles.md');
+    const settingsRule = join(cwd, '.yy-dev/settings/rules/design-principles.md');
     expect(await exists(settingsRule)).toBe(true);
 
     expect(ctx.logs.join('\n')).toMatch(/Setup completed: written=\d+, skipped=\d+/);

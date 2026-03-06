@@ -6,7 +6,7 @@ describe('buildTemplateContext', () => {
   it('includes LANG_CODE and KIRO_DIR (default)', () => {
     const ctx = buildTemplateContext({ agent: 'claude-code', lang: 'ja' });
     expect(ctx.LANG_CODE).toBe('ja');
-    expect(ctx.KIRO_DIR).toBe('.kiro');
+    expect(ctx.KIRO_DIR).toBe('.yy-dev');
     expect(ctx.DEV_GUIDELINES).toBe(
       '- Think in English, generate responses in Japanese. All Markdown content written to project files (e.g., requirements.md, design.md, tasks.md, research.md, validation reports) MUST be written in the target language configured for this specification (see spec.json.language).',
     );

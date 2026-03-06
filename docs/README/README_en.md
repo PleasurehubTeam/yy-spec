@@ -64,7 +64,7 @@ your-project/
 ├── .github/prompts/           # GitHub Copilot prompt collections
 ├── .qwen/commands/yy/       # Qwen Code slash command definitions
 ├── .windsurf/workflows/       # Windsurf workflow files
-├── .kiro/
+├── .yy-dev/
 │   ├── steering/              # Auto-generated steering documents
 │   └── specs/                 # Auto-generated feature specifications  
 ├── CLAUDE.md                  # Copied and renamed from language-specific quickstart
@@ -84,17 +84,17 @@ your-project/
 
 # Step 2: Requirements definition (use auto-generated feature-name)
 /yy:spec-requirements pdf-diagram-extractor
-# → Review and edit .kiro/specs/pdf-diagram-extractor/requirements.md
+# → Review and edit .yy-dev/specs/pdf-diagram-extractor/requirements.md
 
 # Step 3: Technical design (interactive approval)
 /yy:spec-design pdf-diagram-extractor
 # → Respond to "Have you reviewed requirements.md? [y/N]"
-# → Review and edit .kiro/specs/pdf-diagram-extractor/design.md
+# → Review and edit .yy-dev/specs/pdf-diagram-extractor/design.md
 
 # Step 4: Task generation (interactive approval)
 /yy:spec-tasks pdf-diagram-extractor
 # → Respond to review confirmation for requirements and design
-# → Review and edit .kiro/specs/pdf-diagram-extractor/tasks.md
+# → Review and edit .yy-dev/specs/pdf-diagram-extractor/tasks.md
 
 # Step 5: Start implementation
 ```
@@ -299,7 +299,7 @@ sequenceDiagram
 │           ├── spec-status.md
 │           ├── steering.md          # Unified steering command
 │           └── steering-custom.md
-├── .kiro/
+├── .yy-dev/
 │   ├── steering/          # Steering documents
 │   │   ├── product.md
 │   │   ├── tech.md

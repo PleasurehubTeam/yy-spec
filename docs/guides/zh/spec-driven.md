@@ -34,10 +34,10 @@
 
 | 命令 | 目的 | 主要产出物 |
 |------|------|-----------|
-| `/yy:steering` | 建立/刷新项目记忆 | `.kiro/steering/*.md` |
-| `/yy:feature <desc>` | 新功能 → 自动评估规模 → 实施或规划 | `.kiro/specs/<feature>/` |
-| `/yy:fix <desc>` | 已知缺陷 → TDD 修复 → 代码审查 | `.kiro/specs/fix-<name>/` |
-| `/yy:investigate <desc>` | 不确定问题 → 诊断 | `.kiro/specs/investigate-<name>/` |
+| `/yy:steering` | 建立/刷新项目记忆 | `.yy-dev/steering/*.md` |
+| `/yy:feature <desc>` | 新功能 → 自动评估规模 → 实施或规划 | `.yy-dev/specs/<feature>/` |
+| `/yy:fix <desc>` | 已知缺陷 → TDD 修复 → 代码审查 | `.yy-dev/specs/fix-<name>/` |
+| `/yy:investigate <desc>` | 不确定问题 → 诊断 | `.yy-dev/specs/investigate-<name>/` |
 | `/yy:spec-requirements <feature>` | 捕获需求与差距 | `requirements.md` |
 | `/yy:spec-design <feature>` | 生成调研日志 + 实施设计 | `research.md`（需要时）、`design.md` |
 | `/yy:spec-tasks <feature>` | 将设计拆解为带并行波次的任务 | `tasks.md`（含 P 标签） |

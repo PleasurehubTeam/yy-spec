@@ -116,7 +116,7 @@ describe('processManifest', () => {
     const result = processManifest(m, agent, ctx, 'mac' as OSType);
     expect(result).toHaveLength(2);
     const json = result.find((a: any) => a.id === 'json_tpl') as any;
-    expect(json.source.toDir).toBe('.kiro');
+    expect(json.source.toDir).toBe('.yy-dev');
     expect(json.source.outFile).toBe('config.json');
     const md = result.find((a: any) => a.id === 'md_tpl') as any;
     expect(md.source.toDir).toBe('.claude');

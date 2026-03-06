@@ -52,7 +52,7 @@ describe('real codex manifest', () => {
     expect(out).toMatch(/Plan \(dry-run\)/);
     expect(out).toContain('[templateDir] commands: templates/agents/codex/commands -> .codex/prompts');
     expect(out).toContain('[templateFile] doc_main: templates/agents/codex/docs/AGENTS.md -> ./AGENTS.md');
-    expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .kiro/settings');
+    expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .yy-dev/settings');
   });
 
   it('apply writes AGENTS.md, commands, and settings to cwd', async () => {
@@ -75,7 +75,7 @@ describe('real codex manifest', () => {
     const cmd = join(cwd, '.codex/prompts/yy-spec-init.md');
     expect(await exists(cmd)).toBe(true);
 
-    const settingsTemplate = join(cwd, '.kiro/settings/templates/specs/init.json');
+    const settingsTemplate = join(cwd, '.yy-dev/settings/templates/specs/init.json');
     expect(await exists(settingsTemplate)).toBe(true);
 
     expect(ctx.logs.join('\n')).toMatch(/Setup completed: written=\d+, skipped=\d+/);

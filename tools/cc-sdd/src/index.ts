@@ -30,7 +30,7 @@ Options:
   --agent <${agentKeys.join('|')}>  Select agent
 ${agentAliasLine}  --lang <ja|en|zh-TW|zh|es|pt|de|fr|ru|it|ko|ar|el>  Language
   --os <auto|mac|windows|linux>               Target OS (auto uses runtime)
-  --kiro-dir <path>                           Kiro root dir (default .kiro)
+  --kiro-dir <path>                           Specs root dir (default .yy-dev)
   --overwrite <prompt|skip|force>             Overwrite policy (default: prompt)
                                               prompt: ask for each file
                                               skip: never overwrite

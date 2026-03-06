@@ -110,7 +110,7 @@ Review and approve as Source of Truth.
 | 问题 | 原因 | 解决方案 |
 |------|------|---------|
 | ❌ "No codebase found" | 在空目录中运行 | 从包含实际代码的项目根目录运行 |
-| ❌ "Permission denied" | 文件权限不足 | 检查 `.kiro/` 目录的写权限 |
+| ❌ "Permission denied" | 文件权限不足 | 检查 `.yy-dev/` 目录的写权限 |
 | ⚠️ Steering 过于通用 | 代码库较小或全新 | 手动向 `{{KIRO_DIR}}/steering/` 添加领域特定文件 |
 | ⚠️ 更新覆盖了自定义内容 | 用户自定义丢失 | Steering 会保留用户内容——如未生效请报告问题 |
 
@@ -282,7 +282,7 @@ THE <system> SHALL <action>
 - Error Handling: Clear error messages for auth failures
 
 ## Document Status
-✓ Updated .kiro/specs/user-auth-oauth/requirements.md (87 acceptance criteria)
+✓ Updated .yy-dev/specs/user-auth-oauth/requirements.md (87 acceptance criteria)
 ✓ Updated spec.json metadata (phase: requirements-generated)
 
 ## Next Steps
@@ -329,7 +329,7 @@ THE <system> SHALL <action>
 | 问题 | 原因 | 解决方案 |
 |------|------|---------|
 | ❌ "Missing project description" | requirements.md 为空 | 按提示提供功能详情 |
-| ❌ "Spec not found" | 功能名称错误 | 检查 `.kiro/specs/` 中的正确名称 |
+| ❌ "Spec not found" | 功能名称错误 | 检查 `.yy-dev/specs/` 中的正确名称 |
 | ⚠️ 需求过于通用 | 缺少 steering 上下文 | 先运行 `/yy:steering` 以获得更好的上下文 |
 | ⚠️ 缺少某些需求 | 描述不完整 | 审查后重新运行，或手动添加到 requirements.md |
 | ⚠️ 未使用 EARS 格式 | 模板问题 | 检查 `{{KIRO_DIR}}/settings/rules/ears-format.md` |
@@ -399,8 +399,8 @@ Executing full discovery process...
 ✓ Identified integration points: API routes, middleware, database
 
 ## Design Generated
-✓ Updated .kiro/specs/user-auth-oauth/research.md with discovery notes
-✓ Created .kiro/specs/user-auth-oauth/design.md
+✓ Updated .yy-dev/specs/user-auth-oauth/research.md with discovery notes
+✓ Created .yy-dev/specs/user-auth-oauth/design.md
 
 Summary:
 - Architecture: NextAuth.js integration with custom JWT provider
@@ -534,7 +534,7 @@ P1 — 并行波次（多个主任务可以并发运行）
 
 ```
 ## Status
-✓ Generated tasks at .kiro/specs/user-auth-oauth/tasks.md
+✓ Generated tasks at .yy-dev/specs/user-auth-oauth/tasks.md
 
 ## Task Summary
 - Total: 8 major tasks, 24 sub-tasks
@@ -729,7 +729,7 @@ P1 — Service Integration
 | 问题 | 原因 | 解决方案 |
 |------|------|---------|
 | ❌ "Tasks not approved" | spec.json 中缺少批准 | 审查 tasks.md 并批准，或检查 spec.json |
-| ❌ "Feature not found" | 功能名称错误 | 验证名称与 `.kiro/specs/` 目录匹配 |
+| ❌ "Feature not found" | 功能名称错误 | 验证名称与 `.yy-dev/specs/` 目录匹配 |
 | ❌ "Invalid task number" | 任务 ID 不存在 | 检查 tasks.md 中有效的任务编号 |
 | ❌ "Tests failing" | 实施不完整 | 在继续下一个任务前修复失败测试 |
 | ⚠️ 测试未优先编写 | 未遵循 TDD | AI 应先编写测试——如跳过请报告 |
@@ -1380,7 +1380,7 @@ From conversation history:
 
 ### "Feature not found"
 **原因**：功能名称错误或规格不存在
-**解决方案**：检查 `.kiro/specs/` 目录中的正确名称
+**解决方案**：检查 `.yy-dev/specs/` 目录中的正确名称
 
 ### "Requirements/Design not approved"
 **原因**：阶段在 spec.json 中未标记为已批准

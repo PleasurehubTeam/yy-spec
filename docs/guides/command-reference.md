@@ -110,7 +110,7 @@ Review and approve as Source of Truth.
 | Issue | Cause | Solution |
 |-------|-------|----------|
 | ❌ "No codebase found" | Running in empty directory | Run from project root with actual code |
-| ❌ "Permission denied" | Insufficient file permissions | Check write permissions on `.kiro/` directory |
+| ❌ "Permission denied" | Insufficient file permissions | Check write permissions on `.yy-dev/` directory |
 | ⚠️ Steering too generic | Small/new codebase | Manually add domain-specific files to `{{KIRO_DIR}}/steering/` |
 | ⚠️ Updates overwrite my edits | User customizations lost | Steering preserves user content - report if not working |
 
@@ -282,7 +282,7 @@ THE <system> SHALL <action>
 - Error Handling: Clear error messages for auth failures
 
 ## Document Status
-✓ Updated .kiro/specs/user-auth-oauth/requirements.md (87 acceptance criteria)
+✓ Updated .yy-dev/specs/user-auth-oauth/requirements.md (87 acceptance criteria)
 ✓ Updated spec.json metadata (phase: requirements-generated)
 
 ## Next Steps
@@ -329,7 +329,7 @@ THE <system> SHALL <action>
 | Issue | Cause | Solution |
 |-------|-------|----------|
 | ❌ "Missing project description" | Empty requirements.md | Provide feature details when prompted |
-| ❌ "Spec not found" | Wrong feature name | Check `.kiro/specs/` for correct name |
+| ❌ "Spec not found" | Wrong feature name | Check `.yy-dev/specs/` for correct name |
 | ⚠️ Requirements too generic | No steering context | Run `/yy:steering` first for better context |
 | ⚠️ Missing some requirements | Incomplete description | Review and run again, or manually add to requirements.md |
 | ⚠️ Not using EARS format | Template issue | Check `{{KIRO_DIR}}/settings/rules/ears-format.md` |
@@ -399,8 +399,8 @@ Executing full discovery process...
 ✓ Identified integration points: API routes, middleware, database
 
 ## Design Generated
-✓ Updated .kiro/specs/user-auth-oauth/research.md with discovery notes
-✓ Created .kiro/specs/user-auth-oauth/design.md
+✓ Updated .yy-dev/specs/user-auth-oauth/research.md with discovery notes
+✓ Created .yy-dev/specs/user-auth-oauth/design.md
 
 Summary:
 - Architecture: NextAuth.js integration with custom JWT provider
@@ -536,7 +536,7 @@ P1 — Parallel wave (multiple majors can run concurrently)
 
 ```
 ## Status
-✓ Generated tasks at .kiro/specs/user-auth-oauth/tasks.md
+✓ Generated tasks at .yy-dev/specs/user-auth-oauth/tasks.md
 
 ## Task Summary
 - Total: 8 major tasks, 24 sub-tasks
@@ -762,7 +762,7 @@ class User {
 | Issue | Cause | Solution |
 |-------|-------|----------|
 | ❌ "Tasks not approved" | spec.json approval missing | Review tasks.md and approve, or check spec.json |
-| ❌ "Feature not found" | Wrong feature name | Verify name matches `.kiro/specs/` directory |
+| ❌ "Feature not found" | Wrong feature name | Verify name matches `.yy-dev/specs/` directory |
 | ❌ "Invalid task number" | Task ID doesn't exist | Check tasks.md for valid task numbers |
 | ❌ "Tests failing" | Implementation incomplete | Fix failing tests before moving to next task |
 | ⚠️ Tests not written first | TDD not followed | AI should write tests first - report if skipped |
@@ -1384,7 +1384,7 @@ Or implement all remaining tasks:
 
 | Issue | Cause | Solution |
 |-------|-------|----------|
-| ❌ "Spec not found" | Wrong feature name | List specs in `.kiro/specs/` directory |
+| ❌ "Spec not found" | Wrong feature name | List specs in `.yy-dev/specs/` directory |
 | ⚠️ Percentages incorrect | tasks.md parsing issue | Verify checkbox format: `- [ ]` and `- [x]` |
 | 💡 Missing next action | Unclear phase | Status should suggest next command |
 
@@ -1565,7 +1565,7 @@ Or implement all remaining tasks:
 
 ### "Feature not found"
 **Cause**: Wrong feature name or spec doesn't exist  
-**Solution**: Check `.kiro/specs/` directory for correct name
+**Solution**: Check `.yy-dev/specs/` directory for correct name
 
 ### "Requirements/Design not approved"
 **Cause**: Phase not marked as approved in spec.json  

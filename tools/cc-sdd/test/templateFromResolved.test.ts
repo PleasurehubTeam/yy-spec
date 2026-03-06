@@ -12,7 +12,7 @@ describe('contextFromResolved', () => {
     const ctx = contextFromResolved(resolved);
 
     expect(ctx.LANG_CODE).toBe('en');
-    expect(ctx.KIRO_DIR).toBe('.kiro');
+    expect(ctx.KIRO_DIR).toBe('.yy-dev');
     expect(ctx.AGENT_DIR).toBe('.claude');
     expect(ctx.AGENT_DOC).toBe('CLAUDE.md');
     expect(ctx.AGENT_COMMANDS_DIR).toBe('.claude/commands/yy');
@@ -47,7 +47,7 @@ describe('contextFromResolved', () => {
     const ctx = contextFromResolved(resolved);
 
     expect(ctx.LANG_CODE).toBe('zh-TW');
-    expect(ctx.KIRO_DIR).toBe('.kiro');
+    expect(ctx.KIRO_DIR).toBe('.yy-dev');
     expect(ctx.AGENT_DIR).toBe('.qwen');
     expect(ctx.AGENT_DOC).toBe('QWEN.md');
     expect(ctx.AGENT_COMMANDS_DIR).toBe('.qwen/commands/yy');
