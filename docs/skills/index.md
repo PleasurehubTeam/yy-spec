@@ -27,5 +27,6 @@ npx skills add <owner/repo@skill-name> -g -y
 |-------|------|
 | [find-skills](./find-skills) | 搜索和发现新 skill |
 | [Superpowers](./superpowers) | 完整的 AI 编码工作流框架（TDD、调试、审查、计划执行） |
+| [agent-browser](./agent-browser) | 命令行浏览器自动化（比 MCP 更省 token） |
 
 更多 skill 介绍持续更新中。

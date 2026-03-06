@@ -30,6 +30,7 @@ export default defineConfig({
           { text: '概述', link: '/skills/' },
           { text: 'find-skills', link: '/skills/find-skills' },
           { text: 'Superpowers', link: '/skills/superpowers' },
+          { text: 'agent-browser', link: '/skills/agent-browser' },
         ],
       },
       {
