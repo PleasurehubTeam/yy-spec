@@ -29,6 +29,7 @@ export default defineConfig({
         items: [
           { text: '概述', link: '/skills/' },
           { text: 'find-skills', link: '/skills/find-skills' },
+          { text: 'Superpowers', link: '/skills/superpowers' },
         ],
       },
       {
