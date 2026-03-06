@@ -33,6 +33,13 @@ export default defineConfig({
         ],
       },
       {
+        text: 'MCP 推荐',
+        items: [
+          { text: '概述', link: '/mcp/' },
+          { text: 'Playwright', link: '/mcp/playwright' },
+        ],
+      },
+      {
         text: 'yy-spec',
         items: [
           { text: '快速上手', link: '/getting-started/' },
