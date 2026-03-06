@@ -1,0 +1,235 @@
+/* ===== Newsprint Design System for VitePress ===== */
+
+/* --- Font Families --- */
+:root {
+  --vp-font-family-base: 'Lora', Georgia, serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* --- Color System --- */
+:root {
+  /* Background */
+  --vp-c-bg: #F9F9F7;
+  --vp-c-bg-alt: #F5F5F3;
+  --vp-c-bg-elv: #F9F9F7;
+  --vp-c-bg-soft: #F0F0EC;
+
+  /* Text */
+  --vp-c-text-1: #111111;
+  --vp-c-text-2: #404040;
+  --vp-c-text-3: #525252;
+
+  /* Brand / Accent — Editorial Red */
+  --vp-c-brand-1: #CC0000;
+  --vp-c-brand-2: #B30000;
+  --vp-c-brand-3: #990000;
+  --vp-c-brand-soft: rgba(204, 0, 0, 0.1);
+
+  /* Borders */
+  --vp-c-border: #111111;
+  --vp-c-divider: #E5E5E0;
+  --vp-c-gutter: #E5E5E0;
+
+  /* Neutral */
+  --vp-c-neutral: #111111;
+  --vp-c-neutral-inverse: #F9F9F7;
+
+  /* Default Badge / Tip / Warning / Danger */
+  --vp-c-default-1: #111111;
+  --vp-c-default-2: #404040;
+  --vp-c-default-3: #525252;
+  --vp-c-default-soft: rgba(17, 17, 17, 0.06);
+
+  --vp-c-tip-1: #111111;
+  --vp-c-tip-2: #404040;
+  --vp-c-tip-3: #525252;
+  --vp-c-tip-soft: rgba(17, 17, 17, 0.06);
+
+  --vp-c-warning-1: #CC0000;
+  --vp-c-warning-2: #B30000;
+  --vp-c-warning-3: #990000;
+  --vp-c-warning-soft: rgba(204, 0, 0, 0.06);
+
+  --vp-c-danger-1: #CC0000;
+  --vp-c-danger-2: #B30000;
+  --vp-c-danger-3: #990000;
+  --vp-c-danger-soft: rgba(204, 0, 0, 0.06);
+}
+
+/* --- Global Zero Radius --- */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* --- Typography: Headlines use Playfair Display --- */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 700;
+  color: #111111;
+}
+
+.vp-doc h1 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.vp-doc h2 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #111111;
+}
+
+.vp-doc h3 {
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+/* --- UI Elements use Inter --- */
+.VPNav,
+.VPNavBar,
+.VPSidebar,
+.VPNavBarTitle,
+.VPNavBarMenu,
+.VPNavBarMenuLink,
+.VPNavScreenMenuLink {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+}
+
+/* --- Uppercase Labels for Nav and Metadata --- */
+.VPNavBarMenuLink,
+.VPNavScreenMenuLink {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.vp-doc .header-anchor {
+  color: #111111;
+}
+
+/* --- Dot Grid Background Texture --- */
+body {
+  background-color: #F9F9F7;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23111111' fill-opacity='0.04' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* --- Border Structure --- */
+.VPSidebar {
+  border-right: 1px solid #111111 !important;
+}
+
+.VPNavBar {
+  border-bottom: 2px solid #111111 !important;
+}
+
+.VPContent .vp-doc {
+  border-left: none;
+}
+
+/* Sidebar section dividers */
+.VPSidebarItem.level-0 + .VPSidebarItem.level-0 {
+  border-top: 1px solid #E5E5E0;
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* --- Hard Shadow Hover for Interactive Elements --- */
+.VPButton {
+  transition: all 200ms ease-out;
+}
+
+.VPButton:hover {
+  box-shadow: 4px 4px 0px 0px #111111;
+  transform: translate(-2px, -2px);
+}
+
+/* --- Feature Cards Hover --- */
+.VPFeature {
+  border: 1px solid #111111 !important;
+  transition: all 200ms ease-out;
+}
+
+.VPFeature:hover {
+  box-shadow: 4px 4px 0px 0px #111111;
+  transform: translate(-2px, -2px);
+}
+
+/* --- Hero Section --- */
+.VPHero .name {
+  font-family: 'Playfair Display', 'Times New Roman', serif !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #111111 !important;
+}
+
+.VPHero .text {
+  font-family: 'Playfair Display', 'Times New Roman', serif !important;
+  color: #111111;
+}
+
+.VPHero .tagline {
+  font-family: 'Lora', Georgia, serif;
+  color: #404040;
+}
+
+/* --- Brand Button Style --- */
+.VPButton.brand {
+  background-color: #111111;
+  border-color: #111111;
+  color: #F9F9F7;
+}
+
+.VPButton.brand:hover {
+  background-color: #F9F9F7;
+  border-color: #111111;
+  color: #111111;
+}
+
+/* --- Alt Button Style --- */
+.VPButton.alt {
+  background-color: transparent;
+  border: 1px solid #111111;
+  color: #111111;
+}
+
+.VPButton.alt:hover {
+  background-color: #111111;
+  color: #F9F9F7;
+}
+
+/* --- Code Blocks --- */
+.vp-doc div[class*='language-'] {
+  border: 1px solid #111111;
+  background-color: #F5F5F3;
+}
+
+.vp-doc :not(pre) > code {
+  background-color: #F0F0EC;
+  color: #111111;
+}
+
+/* --- Sidebar Active Item --- */
+.VPSidebarItem.is-active > .item > .link > .text {
+  color: #111111;
+  font-weight: 700;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+  .vp-doc h1 {
+    font-size: 2rem;
+  }
+
+  .vp-doc h2 {
+    font-size: 1.5rem;
+  }
+}

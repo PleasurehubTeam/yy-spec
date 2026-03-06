@@ -1,0 +1,24 @@
+{
+  "feature_name": "docs-site-setup",
+  "type": "feature",
+  "created_at": "2026-03-06",
+  "updated_at": "2026-03-06",
+  "language": "zh",
+  "status": "complete",
+  "size": null,
+  "phase": "implementation-complete",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": true
+    },
+    "design": {
+      "generated": true,
+      "approved": true
+    },
+    "tasks": {
+      "generated": true,
+      "approved": true
+    }
+  }
+}
