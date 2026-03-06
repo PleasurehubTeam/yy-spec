@@ -261,7 +261,7 @@ See the comprehensive [Migration Guide](docs/guides/migration-guide.md) for deta
 
 ### Changed
 - Updated completion guides and recommended model messaging to include Windsurf-specific guidance.
-- Refreshed root README, `tools/cc-sdd/README*`, and `docs/README/README_{en,ja,zh-TW}.md` with Windsurf setup instructions and manual QA steps.
+- Refreshed root README, `tools/yy-spec/README*`, and `docs/README/README_{en,ja,zh-TW}.md` with Windsurf setup instructions and manual QA steps.
 
 ## [2.0.0-alpha.2] - 2025-10-13
 
@@ -548,8 +548,8 @@ See the comprehensive [Migration Guide](docs/guides/migration-guide.md) for deta
   - [Japanese](docs/RELEASE_NOTES/RELEASE_NOTES_ja.md)
   - [English](docs/RELEASE_NOTES/RELEASE_NOTES_en.md)
 - **Documentation**:
-  - [English](tools/cc-sdd/README.md)
-  - [Japanese](tools/cc-sdd/README_ja.md)
+  - [English](tools/yy-spec/README.md)
+  - [Japanese](tools/yy-spec/README_ja.md)
   - [Traditional Chinese](docs/README/README_zh-TW.md)
 
 ---

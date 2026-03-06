@@ -5,7 +5,7 @@ Quick pointers to the most relevant guides, workflows, and historical notes for 
 ## Current Guides
 
 - [Project README (English)](../README.md)
-- [Project README (简体中文)](../tools/cc-sdd/README_zh.md)
+- [Project README (简体中文)](../tools/yy-spec/README_zh.md)
 - [Release Notes](RELEASE_NOTES)
 
 ## Deep Dives (WIP)

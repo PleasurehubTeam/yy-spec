@@ -27,7 +27,7 @@ const makeIO = () => {
 describe('real windsurf manifest', () => {
   it('dry-run prints plan for windsurf.json with placeholders applied (mac)', async () => {
     const repoRoot = join(process.cwd(), '..', '..');
-    const manifestPath = join(repoRoot, 'tools/cc-sdd/templates/manifests/windsurf.json');
+    const manifestPath = join(repoRoot, 'tools/yy-spec/templates/manifests/windsurf.json');
     const ctx = makeIO();
     const code = await runCli(['--dry-run', '--lang', 'en', '--agent', 'windsurf', '--manifest', manifestPath], runtime, ctx.io, {});
     expect(code).toBe(0);
@@ -40,7 +40,7 @@ describe('real windsurf manifest', () => {
 
   it('dry-run prints plan including commands for linux via mac template', async () => {
     const repoRoot = join(process.cwd(), '..', '..');
-    const manifestPath = join(repoRoot, 'tools/cc-sdd/templates/manifests/windsurf.json');
+    const manifestPath = join(repoRoot, 'tools/yy-spec/templates/manifests/windsurf.json');
     const ctx = makeIO();
     const runtimeLinux = { platform: 'linux' } as const;
     const code = await runCli(['--dry-run', '--lang', 'en', '--agent', 'windsurf', '--manifest', manifestPath], runtimeLinux, ctx.io, {});
@@ -54,11 +54,11 @@ describe('real windsurf manifest', () => {
 
   it('shows windsurf recommendation message after applying plan', async () => {
     const repoRoot = join(process.cwd(), '..', '..');
-    const manifestPath = join(repoRoot, 'tools/cc-sdd/templates/manifests/windsurf.json');
+    const manifestPath = join(repoRoot, 'tools/yy-spec/templates/manifests/windsurf.json');
     const ctx = makeIO();
 
     const tmpDir = await mkdtemp(join(tmpdir(), 'ccsdd-windsurf-test-'));
-    const templatesRoot = join(repoRoot, 'tools/cc-sdd');
+    const templatesRoot = join(repoRoot, 'tools/yy-spec');
 
     const code = await runCli(['--lang', 'en', '--agent', 'windsurf', '--manifest', manifestPath, '--yes'], runtime, ctx.io, {}, { cwd: tmpDir, templatesRoot });
 

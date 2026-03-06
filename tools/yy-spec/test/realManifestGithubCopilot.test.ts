@@ -34,9 +34,9 @@ const exists = async (p: string) => {
   }
 };
 
-// vitest runs in tools/cc-sdd; repoRoot is two levels up
+// vitest runs in tools/yy-spec; repoRoot is two levels up
 const repoRoot = join(process.cwd(), '..', '..');
-const manifestPath = join(repoRoot, 'tools/cc-sdd/templates/manifests/github-copilot.json');
+const manifestPath = join(repoRoot, 'tools/yy-spec/templates/manifests/github-copilot.json');
 
 describe('real github-copilot manifest', () => {
   it('dry-run prints plan with github-copilot templates', async () => {

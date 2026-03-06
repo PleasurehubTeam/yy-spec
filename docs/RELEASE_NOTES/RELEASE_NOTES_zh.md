@@ -212,7 +212,7 @@ yy-spec 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../..
 - 扩展 CLI 参数解析以识别 `--windsurf` 别名，并确保 agent 注册表正确输出布局元数据。
 
 ### 📚 文档
-- 更新根目录 README、CLI 文档（`tools/cc-sdd/README*`）及历史指南（`docs/README/README_{en,zh-TW}.md`），添加 Windsurf 说明、更新的快速入门矩阵，以及使用 `npx yy-spec@next --windsurf` 的手动 QA 检查清单。
+- 更新根目录 README、CLI 文档（`tools/yy-spec/README*`）及历史指南（`docs/README/README_{en,zh-TW}.md`），添加 Windsurf 说明、更新的快速入门矩阵，以及使用 `npx yy-spec@next --windsurf` 的手动 QA 检查清单。
 
 ### 📈 关键指标
 - **支持的平台**：7 个（Claude Code、Cursor IDE、Gemini CLI、Codex CLI、GitHub Copilot、Qwen Code、Windsurf IDE）

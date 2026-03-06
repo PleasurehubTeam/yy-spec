@@ -27,7 +27,7 @@ const makeIO = () => {
 describe('real cursor manifest', () => {
   it('dry-run prints plan for cursor.json with placeholders applied (mac)', async () => {
     const repoRoot = join(process.cwd(), '..', '..');
-    const manifestPath = join(repoRoot, 'tools/cc-sdd/templates/manifests/cursor.json');
+    const manifestPath = join(repoRoot, 'tools/yy-spec/templates/manifests/cursor.json');
     const ctx = makeIO();
     const code = await runCli(['--dry-run', '--lang', 'en', '--agent', 'cursor', '--manifest', manifestPath], runtime, ctx.io, {});
     expect(code).toBe(0);
@@ -39,7 +39,7 @@ describe('real cursor manifest', () => {
   });
   it('dry-run prints plan including commands for linux via mac template', async () => {
     const repoRoot = join(process.cwd(), '..', '..');
-    const manifestPath = join(repoRoot, 'tools/cc-sdd/templates/manifests/cursor.json');
+    const manifestPath = join(repoRoot, 'tools/yy-spec/templates/manifests/cursor.json');
     const ctx = makeIO();
     const runtimeLinux = { platform: 'linux' } as const;
     const code = await runCli(['--dry-run', '--lang', 'en', '--agent', 'cursor', '--manifest', manifestPath], runtimeLinux, ctx.io, {});
@@ -53,14 +53,14 @@ describe('real cursor manifest', () => {
   
   it('shows cursor recommendation message after applying plan', async () => {
     const repoRoot = join(process.cwd(), '..', '..');
-    const manifestPath = join(repoRoot, 'tools/cc-sdd/templates/manifests/cursor.json');
+    const manifestPath = join(repoRoot, 'tools/yy-spec/templates/manifests/cursor.json');
     const ctx = makeIO();
     
     // Create a temporary directory for execution 
     const tmpDir = await mkdtemp(join(tmpdir(), 'ccsdd-cursor-test-'));
     
     // Use the actual templates directory from the project
-    const templatesRoot = join(repoRoot, 'tools/cc-sdd');
+    const templatesRoot = join(repoRoot, 'tools/yy-spec');
     
     const code = await runCli(['--lang', 'en', '--agent', 'cursor', '--manifest', manifestPath, '--yes'], runtime, ctx.io, {}, { cwd: tmpDir, templatesRoot });
     

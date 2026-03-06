@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { runCli } from '../src/index';
-import { mkdtemp, readdir, readFile, stat } from 'node:fs/promises';
+import { mkdtemp, readFile, stat } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -13,7 +13,7 @@ const makeIO = () => {
     io: {
       log: (m: string) => logs.push(m),
       error: (m: string) => errs.push(m),
-      exit: (_c: number) => {},
+      exit: (_c: number) => { },
     },
     get logs() {
       return logs;
@@ -27,43 +27,36 @@ const makeIO = () => {
 const mkTmp = async () => mkdtemp(join(tmpdir(), 'ccsdd-real-manifest-'));
 const exists = async (p: string) => { try { await stat(p); return true; } catch { return false; } };
 
-// vitest runs in tools/cc-sdd; repoRoot is two levels up
+// vitest runs in tools/yy-spec; repoRoot is two levels up
 const repoRoot = join(process.cwd(), '..', '..');
-const manifestPath = join(repoRoot, 'tools/cc-sdd/templates/manifests/claude-code.json');
+const manifestPath = join(repoRoot, 'tools/yy-spec/templates/manifests/opencode.json');
 
-describe('real claude-code manifest', () => {
-  it('dry-run prints plan for claude-code.json with placeholders applied', async () => {
+describe('real opencode manifest', () => {
+  it('dry-run prints plan for opencode.json with placeholders applied', async () => {
     const ctx = makeIO();
-    const code = await runCli(['--dry-run', '--lang', 'en', '--manifest', manifestPath], runtime, ctx.io, {});
+    const code = await runCli(['--dry-run', '--lang', 'en', '--agent', 'opencode', '--manifest', manifestPath], runtime, ctx.io, {});
     expect(code).toBe(0);
     const out = ctx.logs.join('\n');
     expect(out).toMatch(/Plan \(dry-run\)/);
-    expect(out).toContain('[templateDir] commands: templates/agents/claude-code/commands -> .claude/commands/yy');
-    expect(out).toContain('[templateFile] doc_main: templates/agents/claude-code/docs/CLAUDE.md -> ./CLAUDE.md');
+    expect(out).toContain('[templateDir] commands: templates/agents/opencode/commands -> .opencode/commands');
+    expect(out).toContain('[templateFile] doc_main: templates/agents/opencode/docs/AGENTS.md -> ./AGENTS.md');
     expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .yy-dev/settings');
   });
 
-  it('apply writes CLAUDE.md and command files to cwd', async () => {
+  it('apply writes AGENTS.md and command files to cwd', async () => {
     const cwd = await mkTmp();
     const ctx = makeIO();
-    const code = await runCli(['--lang', 'en', '--manifest', manifestPath, '--overwrite=force'], runtime, ctx.io, {}, { cwd, templatesRoot: process.cwd() });
+    const code = await runCli(['--lang', 'en', '--agent', 'opencode', '--manifest', manifestPath, '--overwrite=force'], runtime, ctx.io, {}, { cwd, templatesRoot: process.cwd() });
     expect(code).toBe(0);
 
-    const doc = join(cwd, 'CLAUDE.md');
+    const doc = join(cwd, 'AGENTS.md');
     expect(await exists(doc)).toBe(true);
     const text = await readFile(doc, 'utf8');
     expect(text).toMatch(/# AI-DLC and Spec-Driven Development/);
     expect(text).toContain('Steering: `.yy-dev/steering/`');
 
-    // Verify all 13 yy commands exist
-    const cmdDir = join(cwd, '.claude/commands/yy');
-    const cmdFiles = (await readdir(cmdDir)).sort();
-    expect(cmdFiles).toEqual([
-      'feature.md', 'fix.md', 'investigate.md', 'plan-exec.md',
-      'spec-design.md', 'spec-impl.md', 'spec-requirements.md', 'spec-tasks.md',
-      'status.md', 'steering.md',
-      'validate-design.md', 'validate-gap.md', 'validate-impl.md',
-    ]);
+    const cmd = join(cwd, '.opencode/commands/yy-spec-init.md');
+    expect(await exists(cmd)).toBe(true);
 
     const settingsRule = join(cwd, '.yy-dev/settings/rules/design-principles.md');
     expect(await exists(settingsRule)).toBe(true);
@@ -72,33 +65,33 @@ describe('real claude-code manifest', () => {
   });
 });
 
-describe('real claude-code manifest (linux)', () => {
+describe('real opencode manifest (linux)', () => {
   const runtimeLinux = { platform: 'linux' } as const;
 
   it('dry-run prints plan including commands for linux via windows template', async () => {
     const ctx = makeIO();
-    const code = await runCli(['--dry-run', '--lang', 'en', '--manifest', manifestPath], runtimeLinux, ctx.io, {});
+    const code = await runCli(['--dry-run', '--lang', 'en', '--agent', 'opencode', '--manifest', manifestPath], runtimeLinux, ctx.io, {});
     expect(code).toBe(0);
     const out = ctx.logs.join('\n');
     expect(out).toMatch(/Plan \(dry-run\)/);
-    expect(out).toContain('[templateDir] commands: templates/agents/claude-code/commands -> .claude/commands/yy');
-    expect(out).toContain('[templateFile] doc_main: templates/agents/claude-code/docs/CLAUDE.md -> ./CLAUDE.md');
+    expect(out).toContain('[templateDir] commands: templates/agents/opencode/commands -> .opencode/commands');
+    expect(out).toContain('[templateFile] doc_main: templates/agents/opencode/docs/AGENTS.md -> ./AGENTS.md');
     expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .yy-dev/settings');
   });
 
-  it('apply writes CLAUDE.md and command files to cwd on linux', async () => {
+  it('apply writes AGENTS.md and command files to cwd on linux', async () => {
     const cwd = await mkTmp();
     const ctx = makeIO();
-    const code = await runCli(['--lang', 'en', '--manifest', manifestPath, '--overwrite=force'], runtimeLinux, ctx.io, {}, { cwd, templatesRoot: process.cwd() });
+    const code = await runCli(['--lang', 'en', '--agent', 'opencode', '--manifest', manifestPath, '--overwrite=force'], runtimeLinux, ctx.io, {}, { cwd, templatesRoot: process.cwd() });
     expect(code).toBe(0);
 
-    const doc = join(cwd, 'CLAUDE.md');
+    const doc = join(cwd, 'AGENTS.md');
     expect(await exists(doc)).toBe(true);
     const text = await readFile(doc, 'utf8');
     expect(text).toMatch(/# AI-DLC and Spec-Driven Development/);
     expect(text).toContain('Steering: `.yy-dev/steering/`');
 
-    const cmd = join(cwd, '.claude/commands/yy/fix.md');
+    const cmd = join(cwd, '.opencode/commands/yy-spec-init.md');
     expect(await exists(cmd)).toBe(true);
 
     const settingsTemplate = join(cwd, '.yy-dev/settings/templates/specs/init.json');

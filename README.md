@@ -6,7 +6,7 @@
 [![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
 <div align="center" style="font-size: 1.1rem; margin-bottom: 1rem;"><sub>
-<a href="./tools/cc-sdd/README.md">English</a> | <a href="./tools/cc-sdd/README_zh.md">简体中文</a>
+<a href="./tools/yy-spec/README.md">English</a> | <a href="./tools/yy-spec/README_zh.md">简体中文</a>
 </sub></div>
 
 ## 将 AI 编程 Agent 升级为生产就绪的规格驱动开发
@@ -424,8 +424,8 @@ npx yy-spec@latest --kiro-dir docs  # 自定义规格目录
 | **迁移指南** | 从 v1.x 升级到 v2.0.0 | [English](docs/guides/migration-guide.md) \| [简体中文](docs/guides/zh/migration-guide.md) |
 
 ### NPM 包文档
-- English: [tools/cc-sdd/README.md](tools/cc-sdd/README.md)
-- 简体中文: [tools/cc-sdd/README_zh.md](tools/cc-sdd/README_zh.md)
+- English: [tools/yy-spec/README.md](tools/yy-spec/README.md)
+- 简体中文: [tools/yy-spec/README_zh.md](tools/yy-spec/README_zh.md)
 
 ---
 
@@ -441,7 +441,7 @@ npx yy-spec@latest --kiro-dir docs  # 自定义规格目录
 
 ## 📦 包信息
 
-本仓库包含 **cc-sdd** NPM 包，位于 [`tools/cc-sdd/`](tools/cc-sdd/)。
+本仓库包含 **yy-spec** NPM 包，位于 [`tools/yy-spec/`](tools/yy-spec/)。
 
 ## License
 

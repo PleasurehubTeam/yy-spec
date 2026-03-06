@@ -21,9 +21,9 @@ const makeIO = () => {
 const mkTmp = async () => mkdtemp(join(tmpdir(), 'ccsdd-real-manifest-gemini-'));
 const exists = async (p: string) => { try { await stat(p); return true; } catch { return false; } };
 
-// vitest runs in tools/cc-sdd; repoRoot is two levels up
+// vitest runs in tools/yy-spec; repoRoot is two levels up
 const repoRoot = join(process.cwd(), '..', '..');
-const manifestPath = join(repoRoot, 'tools/cc-sdd/templates/manifests/gemini-cli.json');
+const manifestPath = join(repoRoot, 'tools/yy-spec/templates/manifests/gemini-cli.json');
 
 describe('real gemini-cli manifest (mac)', () => {
   const runtimeDarwin = { platform: 'darwin' } as const;
