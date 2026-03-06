@@ -48,6 +48,8 @@ Generate technical design document for feature based on approved requirements.
 - **Entire `{{KIRO_DIR}}/steering/` directory** for complete project memory
 - `{{KIRO_DIR}}/settings/templates/specs/design.md` for document structure
 - `{{KIRO_DIR}}/settings/rules/design-principles.md` for design principles
+- `{{KIRO_DIR}}/steering/principles.md` (if exists, for compliance check)
+- `{{KIRO_DIR}}/settings/rules/principles-compliance.md` for compliance process
 
 **Validate requirements approval**:
 - If auto-approve flag is true: Auto-approve requirements in spec.json
@@ -101,7 +103,17 @@ Generate technical design document for feature based on approved requirements.
    - Apply design rules: Type Safety, Visual Communication, Formal Tone
    - Use language specified in spec.json
 
-3. **Update Metadata** in spec.json:
+### Step 4: Principles Compliance Check
+
+1. If `{{KIRO_DIR}}/steering/principles.md` exists:
+   - Read `{{KIRO_DIR}}/settings/rules/principles-compliance.md`
+   - Evaluate design against each principle (PASS/WARN/FAIL)
+   - Include compliance summary in command output
+2. If principles.md does not exist: skip with note "No principles defined — run `/yy:steering` to generate"
+
+### Step 5: Update Metadata
+
+**Update Metadata** in spec.json:
    - Set `phase: "design-generated"`
    - Set `approvals.design.generated: true, approved: false`
    - Set `approvals.requirements.approved: true`
@@ -136,6 +148,7 @@ Provide brief summary in the language specified in spec.json:
 2. **Discovery Type**: Which discovery process was executed (full/light/minimal)
 3. **Key Findings**: 2-3 critical insights from discovery that shaped the design
 4. **Next Action**: Approval workflow guidance (see Safety & Fallback)
+5. **Principles Compliance**: Summary of compliance check results (if principles exist)
 
 **Format**: Concise Markdown (under 200 words) - this is the command output, NOT the design document itself
 

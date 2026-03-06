@@ -62,8 +62,17 @@ Check `{{KIRO_DIR}}/steering/` status:
    - Tech: Frameworks, decisions, conventions
    - Structure: Organization, naming, imports
 4. Generate steering files (follow templates)
-5. Load principles from `{{KIRO_DIR}}/settings/rules/steering-principles.md`
-6. Present summary for review
+5. Generate principles:
+   - Load template from `{{KIRO_DIR}}/settings/templates/steering/principles.md`
+   - Analyze codebase for implicit principles:
+     - Check for linting configs, type checking settings → Type Safety principles
+     - Check for test frameworks, CI configs → Testing principles
+     - Check for architectural patterns (monorepo, microservices, etc.)
+     - Check for security configs, auth patterns
+   - Extract 3-5 core principles from observed patterns
+   - Write `{{KIRO_DIR}}/steering/principles.md`
+6. Load principles from `{{KIRO_DIR}}/settings/rules/steering-principles.md`
+7. Present summary for review
 
 **Focus**: Patterns that guide decisions, not catalogs of files/dependencies.
 
@@ -77,6 +86,8 @@ Check `{{KIRO_DIR}}/steering/` status:
    - **Steering → Code**: Missing elements → Warning
    - **Code → Steering**: New patterns → Update candidate
    - **Custom files**: Check relevance
+   - **Principles file**: Check if principles.md exists, generate if missing
+   - If exists: Verify principles still align with codebase patterns
 4. Propose updates (additive, preserve user content)
 5. Report: Updates, warnings, recommendations
 
@@ -116,6 +127,7 @@ Chat summary only (files updated directly).
 - product.md: [Brief description]
 - tech.md: [Key stack]
 - structure.md: [Organization]
+- principles.md: [Key constraints]
 
 Review and approve as Source of Truth.
 ```

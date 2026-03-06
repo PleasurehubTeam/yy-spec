@@ -35,6 +35,7 @@ Generate complete requirements for feature **$1** based on the project descripti
 2. **Read Guidelines**:
    - Read `{{KIRO_DIR}}/settings/rules/ears-format.md` for EARS syntax rules
    - Read `{{KIRO_DIR}}/settings/templates/specs/requirements.md` for document structure
+   - Read `{{KIRO_DIR}}/settings/rules/ambiguity-detection.md` for ambiguity scanning rules
 
 3. **Generate Requirements**:
    - Create initial requirements based on project description
@@ -42,7 +43,13 @@ Generate complete requirements for feature **$1** based on the project descripti
    - Apply EARS format to all acceptance criteria
    - Use language specified in spec.json
 
-4. **Update Metadata**:
+4. **Ambiguity Scan**:
+   - Read `{{KIRO_DIR}}/settings/rules/ambiguity-detection.md`
+   - Scan generated requirements across 6 dimensions (Functional Scope, Data & Domain Model, Non-Functional Quality, Integration & Dependencies, Edge Cases, Completion Signals)
+   - If any dimension is Partial or Missing: append "Ambiguity Notes" section to requirements.md (max 5 notes, each with default assumption)
+   - If all dimensions are Clear: no section added
+
+5. **Update Metadata**:
    - Set `phase: "requirements-generated"`
    - Set `approvals.requirements.generated: true`
    - Update `updated_at` timestamp
@@ -66,6 +73,7 @@ Provide output in the language specified in spec.json with:
 1. **Generated Requirements Summary**: Brief overview of major requirement areas (3-5 bullets)
 2. **Document Status**: Confirm requirements.md updated and spec.json metadata updated
 3. **Next Steps**: Guide user on how to proceed (approve and continue, or modify)
+4. **Ambiguity Scan**: Summary of detected ambiguities (e.g., "2 partial, 1 missing") or "all clear"
 
 **Format Requirements**:
 - Use Markdown headings for clarity

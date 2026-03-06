@@ -1,5 +1,5 @@
 ---
-description: Manage {{KIRO_DIR}}/steering/ as persistent project knowledge
+description: 管理 {{KIRO_DIR}}/steering/ 持久化项目知识
 allowed-tools: Read, Task, Glob
 ---
 
@@ -43,7 +43,7 @@ JIT Strategy: Fetch codebase files when needed, not upfront
 Show Subagent summary to user:
 
 ### Bootstrap:
-- Generated steering files: product.md, tech.md, structure.md
+- Generated steering files: product.md, tech.md, structure.md, principles.md
 - Review and approve as Source of Truth
 
 ### Sync:

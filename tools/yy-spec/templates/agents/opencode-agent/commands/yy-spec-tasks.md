@@ -32,6 +32,9 @@ File patterns to read:
 - {{KIRO_DIR}}/settings/rules/tasks-generation.md
 - {{KIRO_DIR}}/settings/rules/tasks-parallel-analysis.md (include only when sequential mode is false)
 - {{KIRO_DIR}}/settings/templates/specs/tasks.md
+- {{KIRO_DIR}}/settings/rules/consistency-analysis.md
+- {{KIRO_DIR}}/settings/rules/principles-compliance.md
+- {{KIRO_DIR}}/steering/principles.md
 
 Mode: {generate or merge based on tasks.md existence}
 Instruction highlights:

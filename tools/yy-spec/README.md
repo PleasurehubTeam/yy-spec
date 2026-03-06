@@ -18,6 +18,9 @@ English | <a href="./README_zh.md">简体中文</a>
 - ✅ **Quality Gates** — validate-gap/design/impl commands catch integration issues before coding
 - ✅ **Customize Once** — Adapt templates to your team's process; all agents follow the same workflow
 - ✅ **Universal Workflow** — 8 agents share the same 11-command process
+- ✅ **Project Principles** — `steering` auto-discovers architectural constraints; compliance checked in design and tasks
+- ✅ **Consistency Analysis** — Cross-artifact checks (requirements ↔ design ↔ tasks) run automatically after task generation
+- ✅ **Ambiguity Detection** — Requirements scanned for underspecified areas and marked inline with default assumptions
 
 > **Acknowledgement**: This project is a fork of [cc-sdd](https://github.com/gotalab/cc-sdd) by [@gotalab](https://github.com/gotalab). Thanks to the original author for the excellent Spec-Driven Development framework.
 

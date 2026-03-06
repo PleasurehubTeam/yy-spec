@@ -1,5 +1,5 @@
 ---
-description: Feature implementation workflow — auto-sized with TDD and code review
+description: 功能实现工作流 — 自动评估规模，含 TDD 和代码审查
 allowed-tools: Bash, Read, Write, Edit, MultiEdit, Grep, Glob, LS, WebFetch, WebSearch
 argument-hint: <feature-description>
 ---
@@ -53,6 +53,7 @@ If feature is small:
    - Components affected
    - Changes needed
    - Interface changes (if any)
+   - If `{{KIRO_DIR}}/steering/principles.md` exists: quick compliance check against principles, report any WARN/FAIL in output
 2. **Implement with TDD**:
    - RED: Write failing tests for the new functionality
    - GREEN: Implement the minimal code to pass tests
@@ -75,8 +76,13 @@ If feature is large:
 2. **Generate implementation plan**:
    - Invoke the `superpowers:writing-plans` skill if available; otherwise create a structured plan manually with numbered tasks, dependencies, and acceptance criteria
    - Save plan to spec directory
-3. **Update spec.json**: `size: "large"`, `status: "planned"`
-4. **Output**:
+3. **Quality Checks**:
+   - Run ambiguity scan on requirements (per `{{KIRO_DIR}}/settings/rules/ambiguity-detection.md`)
+   - If `{{KIRO_DIR}}/steering/principles.md` exists: run principles compliance on design (per `{{KIRO_DIR}}/settings/rules/principles-compliance.md`)
+   - Run consistency analysis across all documents (per `{{KIRO_DIR}}/settings/rules/consistency-analysis.md`)
+   - Include summary in output
+4. **Update spec.json**: `size: "large"`, `status: "planned"`
+5. **Output**:
    - Summary of generated documents
    - Prompt: "Plan generated. Start a new session and run `/yy:plan-exec <feature-name>` to execute."
 
@@ -107,7 +113,8 @@ Provide output in the language specified in spec.json:
 1. **Feature**: Brief description
 2. **Size Assessment**: Why it's large
 3. **Documents Generated**: List of spec files
-4. **Next Step**: `/yy:plan-exec <feature-name>`
+4. **Quality Summary**: Ambiguity notes, compliance status, consistency check results
+5. **Next Step**: `/yy:plan-exec <feature-name>`
 
 **Format**: Concise Markdown, under 250 words.
 

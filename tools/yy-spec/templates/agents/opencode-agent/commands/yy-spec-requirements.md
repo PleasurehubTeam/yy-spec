@@ -27,6 +27,7 @@ File patterns to read:
 - {{KIRO_DIR}}/steering/*.md
 - {{KIRO_DIR}}/settings/rules/ears-format.md
 - {{KIRO_DIR}}/settings/templates/specs/requirements.md
+- {{KIRO_DIR}}/settings/rules/ambiguity-detection.md
 
 Mode: generate
 

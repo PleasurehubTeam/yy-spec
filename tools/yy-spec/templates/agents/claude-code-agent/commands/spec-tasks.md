@@ -1,5 +1,5 @@
 ---
-description: Generate implementation tasks for a specification
+description: 为规格说明生成实现任务
 allowed-tools: Read, Write, Edit, MultiEdit, Glob, Grep
 argument-hint: <feature-name> [-y] [--sequential]
 ---
@@ -27,6 +27,9 @@ Generate implementation tasks for feature **$1** based on approved requirements 
 - `{{KIRO_DIR}}/specs/$1/spec.json`, `requirements.md`, `design.md`
 - `{{KIRO_DIR}}/specs/$1/tasks.md` (if exists, for merge mode)
 - **Entire `{{KIRO_DIR}}/steering/` directory** for complete project memory
+- `{{KIRO_DIR}}/settings/rules/consistency-analysis.md` for post-generation analysis
+- `{{KIRO_DIR}}/settings/rules/principles-compliance.md` for compliance check
+- `{{KIRO_DIR}}/steering/principles.md` (if exists)
 
 **Validate approvals**:
 - If `-y` flag provided ($2 == "-y"): Auto-approve requirements and design in spec.json
@@ -62,6 +65,23 @@ Generate implementation tasks for feature **$1** based on approved requirements 
   - Set `approvals.design.approved: true`
   - Update `updated_at` timestamp
 
+### Step 4: Quality Analysis
+
+1. **Consistency Check** (mandatory):
+   - Read `{{KIRO_DIR}}/settings/rules/consistency-analysis.md`
+   - Run 4-pass analysis across requirements.md, design.md, tasks.md:
+     - Pass 1: Requirements coverage (every requirement mapped to tasks)
+     - Pass 2: Design-task alignment (every component has tasks)
+     - Pass 3: Inconsistency detection (terminology, scope conflicts)
+     - Pass 4: Completeness check (acceptance criteria, edge cases, integration)
+   - Include results in command output
+
+2. **Principles Compliance** (if `{{KIRO_DIR}}/steering/principles.md` exists):
+   - Read `{{KIRO_DIR}}/settings/rules/principles-compliance.md`
+   - Evaluate task plan against each principle (PASS/WARN/FAIL)
+   - Include compliance summary in command output
+   - If principles.md does not exist: skip with note
+
 ## Critical Constraints
 - **Follow rules strictly**: All principles in tasks-generation.md are mandatory
 - **Natural Language**: Describe what to do, not code structure details
@@ -88,7 +108,12 @@ Provide brief summary in the language specified in spec.json:
    - ✅ All requirements mapped to tasks
    - ✅ Task dependencies verified
    - ✅ Testing tasks included
-4. **Next Action**: Review tasks and proceed when ready
+4. **Consistency Analysis**:
+   - Requirements coverage: X/Y (Z%)
+   - Design components mapped: A/B
+   - Issues found: N (list if any)
+5. **Principles Compliance**: Summary (if principles exist)
+6. **Next Action**: Review tasks and proceed when ready
 
 **Format**: Concise (under 200 words)
 

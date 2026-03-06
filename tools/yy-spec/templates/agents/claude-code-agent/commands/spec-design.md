@@ -1,5 +1,5 @@
 ---
-description: Create comprehensive technical design for a specification
+description: 为规格说明创建全面的技术设计
 allowed-tools: Bash, Glob, Grep, LS, Read, Write, Edit, MultiEdit, Update, WebSearch, WebFetch
 argument-hint: <feature-name> [-y]
 ---
@@ -29,6 +29,8 @@ Generate technical design document for feature **$1** based on approved requirem
 - `{{KIRO_DIR}}/settings/templates/specs/design.md` for document structure
 - `{{KIRO_DIR}}/settings/rules/design-principles.md` for design principles
 - `{{KIRO_DIR}}/settings/templates/specs/research.md` for discovery log structure
+- `{{KIRO_DIR}}/steering/principles.md` (if exists, for compliance check)
+- `{{KIRO_DIR}}/settings/rules/principles-compliance.md` for compliance process
 
 **Validate requirements approval**:
 - If `-y` flag provided ($2 == "-y"): Auto-approve requirements in spec.json
@@ -92,7 +94,17 @@ Generate technical design document for feature **$1** based on approved requirem
 - Use language specified in spec.json
 - Ensure sections reflect updated headings ("Architecture Pattern & Boundary Map", "Technology Stack & Alignment", "Components & Interface Contracts") and reference supporting details from `research.md`
 
-3. **Update Metadata** in spec.json:
+### Step 4: Principles Compliance Check
+
+1. If `{{KIRO_DIR}}/steering/principles.md` exists:
+   - Read `{{KIRO_DIR}}/settings/rules/principles-compliance.md`
+   - Evaluate design against each principle (PASS/WARN/FAIL)
+   - Include compliance summary in command output
+2. If principles.md does not exist: skip with note "No principles defined — run `/yy:steering` to generate"
+
+### Step 5: Update Metadata
+
+**Update Metadata** in spec.json:
 - Set `phase: "design-generated"`
 - Set `approvals.design.generated: true, approved: false`
 - Set `approvals.requirements.approved: true`
@@ -129,6 +141,7 @@ Provide brief summary in the language specified in spec.json:
 3. **Key Findings**: 2-3 critical insights from `research.md` that shaped the design
 4. **Next Action**: Approval workflow guidance (see Safety & Fallback)
 5. **Research Log**: Confirm `research.md` updated with latest decisions
+6. **Principles Compliance**: Summary of compliance check results (if principles exist)
 
 **Format**: Concise Markdown (under 200 words) - this is the command output, NOT the design document itself
 

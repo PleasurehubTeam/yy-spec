@@ -29,6 +29,8 @@ File patterns to read:
 - {{KIRO_DIR}}/settings/rules/design-*.md
 - {{KIRO_DIR}}/settings/templates/specs/design.md
 - {{KIRO_DIR}}/settings/templates/specs/research.md
+- {{KIRO_DIR}}/steering/principles.md
+- {{KIRO_DIR}}/settings/rules/principles-compliance.md
 
 Discovery: auto-detect based on requirements
 Mode: {generate or merge based on design.md existence}
