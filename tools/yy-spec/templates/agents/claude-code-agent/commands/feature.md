@@ -35,6 +35,43 @@ Implement the feature described in **$ARGUMENTS**, automatically choosing the ri
    - Write as `spec.json`
 5. Write `requirements.md` with the feature description and initial requirements
 
+### Step 2.5: Requirements Clarity Check
+
+Evaluate whether the feature description provides enough information to generate quality requirements.
+
+**Clarity criteria** — the description is CLEAR if it covers at least 3 of these 5 dimensions:
+1. **Scope**: What's included and what's not
+2. **Users/Actors**: Who uses this feature
+3. **Core behavior**: What the feature actually does (not just a label)
+4. **Constraints**: Technical, business, or UX constraints
+5. **Success criteria**: How to know it's working
+
+**If description covers ≥3 dimensions**: Skip to Step 3.
+
+**If description covers <3 dimensions**: Ask focused clarification questions.
+- Identify the 2-3 most impactful missing dimensions
+- Ask ALL questions in a single message (not one at a time)
+- Each question should offer 2-3 concrete options plus "其他" / "Other"
+- Example:
+  ```
+  Feature description is brief. A few quick questions before I proceed:
+
+  1. **Scope**: "用户系统" includes which of these?
+     a) Registration + login only
+     b) Registration + login + role-based permissions
+     c) Full user management (CRUD + roles + OAuth)
+
+  2. **Core behavior**: What authentication method?
+     a) Email/password + JWT
+     b) OAuth (Google/GitHub) only
+     c) Both
+
+  3. Or just say "先做再说" and I'll proceed with reasonable defaults.
+  ```
+- **If user answers**: Incorporate answers into requirements.md, then continue to Step 3
+- **If user says "先做再说" / "just proceed" / similar**: Note default assumptions in requirements.md, continue to Step 3
+- **Max 1 round**: Do NOT ask follow-up questions. One round of clarification only.
+
 ### Step 3: Analyze and Size
 1. Review current system: relevant modules, architecture, steering
 2. Identify files that need to change
