@@ -47,6 +47,7 @@ yarn.lock
 
 # Exceptions for CI reproducibility
 !tools/yy-spec/package-lock.json
+!docs/package-lock.json
 
 # Environment variables
 .env

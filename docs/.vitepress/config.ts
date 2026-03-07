@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/yy-spec/',
   title: 'yy-ai-workflow',
   description: 'AI 开发者工具文档与知识平台 — 工具使用指南、AI 驱动开发生命周期、规格驱动开发方法论',
   lang: 'zh-CN',
