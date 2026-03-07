@@ -43,5 +43,6 @@ claude mcp add playwright npx @playwright/mcp@latest
 | MCP Server | 用途 |
 |------------|------|
 | [Playwright](/mcp/playwright) | 浏览器自动化（网页操作、测试、截图） |
+| [Context7](/mcp/context7) | 实时查询第三方库的最新文档 |
 
 更多 MCP Server 介绍持续更新中。

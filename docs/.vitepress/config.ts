@@ -39,6 +39,7 @@ export default defineConfig({
         items: [
           { text: '概述', link: '/mcp/' },
           { text: 'Playwright', link: '/mcp/playwright' },
+          { text: 'Context7', link: '/mcp/context7' },
         ],
       },
       {
