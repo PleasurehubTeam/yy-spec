@@ -30,5 +30,6 @@ npx skills add <owner/repo@skill-name> -g -y
 | [find-skills](./find-skills) | 搜索和发现新 skill | 需要你说"找一个 XX 的 skill" |
 | [Superpowers](./superpowers) | 完整的 AI 编码工作流框架 | 自动生效 |
 | [agent-browser](./agent-browser) | 命令行浏览器自动化 | 需要你说"用 agent-browser 看看页面" |
+| [skill-creator](./skill-creator) | 创建自己的 skill | 需要你说"帮我创建一个 skill" |
 
 更多 skill 介绍持续更新中。

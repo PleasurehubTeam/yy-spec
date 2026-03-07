@@ -31,6 +31,7 @@ export default defineConfig({
           { text: 'find-skills', link: '/skills/find-skills' },
           { text: 'Superpowers', link: '/skills/superpowers' },
           { text: 'agent-browser', link: '/skills/agent-browser' },
+          { text: 'skill-creator', link: '/skills/skill-creator' },
         ],
       },
       {
