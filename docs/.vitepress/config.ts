@@ -29,6 +29,7 @@ export default defineConfig({
         text: 'Plugin 推荐',
         items: [
           { text: '概述', link: '/plugins/' },
+          { text: 'Superpowers', link: '/plugins/superpowers' },
           { text: 'Sentry', link: '/plugins/sentry' },
         ],
       },
@@ -37,7 +38,6 @@ export default defineConfig({
         items: [
           { text: '概述', link: '/skills/' },
           { text: 'find-skills', link: '/skills/find-skills' },
-          { text: 'Superpowers', link: '/skills/superpowers' },
           { text: 'agent-browser', link: '/skills/agent-browser' },
           { text: 'skill-creator', link: '/skills/skill-creator' },
         ],

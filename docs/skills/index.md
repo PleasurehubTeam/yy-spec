@@ -6,7 +6,7 @@
 
 Skill 是一种标准化的知识包格式，安装后 AI 编码助手（如 Claude Code）可以获得特定领域的专业知识和工作流。
 
-**重要**：大部分 skill 不会自动生效。你需要在对话中**明确告诉 AI 使用对应的 skill**，AI 才会去调用。只有少数插件类 skill（如 Superpowers）安装后会自动介入。
+**重要**：大部分 skill 不会自动生效。你需要在对话中**明确告诉 AI 使用对应的 skill**，AI 才会去调用。只有少数插件（如 [Superpowers](/plugins/superpowers)）安装后会自动介入。
 
 每个 skill 的触发方式不同，具体看各自的文档。
 
@@ -28,7 +28,6 @@ npx skills add <owner/repo@skill-name> -g -y
 | Skill | 用途 | 触发方式 |
 |-------|------|---------|
 | [find-skills](./find-skills) | 搜索和发现新 skill | 需要你说"找一个 XX 的 skill" |
-| [Superpowers](./superpowers) | 完整的 AI 编码工作流框架 | 自动生效 |
 | [agent-browser](./agent-browser) | 命令行浏览器自动化 | 需要你说"用 agent-browser 看看页面" |
 | [skill-creator](./skill-creator) | 创建自己的 skill | 需要你说"帮我创建一个 skill" |
 

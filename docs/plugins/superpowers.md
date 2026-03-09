@@ -150,4 +150,4 @@ AI：PR 已创建
 ## 更多
 
 - [GitHub 仓库](https://github.com/obra/superpowers) — 源码和详细文档
-- [Skills 推荐列表](./) — 查看更多推荐 skill
+- [Plugin 推荐列表](./) — 查看更多推荐 plugin
