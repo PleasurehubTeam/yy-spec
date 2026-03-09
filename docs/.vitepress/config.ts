@@ -26,6 +26,13 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: 'Plugin 推荐',
+        items: [
+          { text: '概述', link: '/plugins/' },
+          { text: 'Sentry', link: '/plugins/sentry' },
+        ],
+      },
+      {
         text: 'Skills 推荐',
         items: [
           { text: '概述', link: '/skills/' },
